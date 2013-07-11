@@ -1,0 +1,9 @@
+<h1>Tasks#new</h1>
+<p>Find me in app/views/tasks/new.html.erb</p>
+<h3 style="color:red"><%= @task.errors.full_messages.first %></h3>
+<%= form_for @task do |f| %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %><br />
+
+  <%= f.submit "Create new task" %>
+<% end %>
