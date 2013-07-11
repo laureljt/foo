@@ -14,13 +14,12 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, :git
-set :repository, "git@git.boondockwalker.com:pipeline/product-cms.git"
+set :repository, "git@github.com/laureljt/foo.git"
 set :branch, "master"
 
 set :user, "laureljt"
 
 after "deploy:update_code" do
-
   run "rm -rf /home4/laureljt/public_html/ruby2/"
   run "ln -s #{release_path}/public /home4/laureljt/public_html/ruby2"
   run "cd #{release_path} ; RAILS_ENV=production bundle exec rake assets:precompile --trace"
